@@ -1,0 +1,3 @@
+remote_theme: AshV/my-site-theme
+plugins:
+  - jekyll-feed
