@@ -12,7 +12,7 @@ Let's understand this with an example. We will be implementing **Logger** which 
 
 We have 3 classes for each type of logger i.e. FileLogger, EmailLogger & DatabaseLogger. All have implemented their own logic.
 
-> Source Code : [Template Method Design Pattern/Logger/Approach1](Logger/CSharp/Approach1)
+> Source Code : [Template Method Pattern / Logger / Approach1](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/CSharp/Approach1)
 
 ```csharp
 public class FileLogger
@@ -118,7 +118,7 @@ class MainClass
 
 We have created class AbstractLogger, and moved common code(i.e. SerializeMessage here) here. All class requiring this code will be inheriting this class now to reuse code.
 
-> Source Code : [Template-Method-Design-Pattern/Logger/Approach2](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach2)
+> Source Code : [Template Method Pattern / Logger / Approach2](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/CSharp/Approach2)
 
 ```csharp
 public abstract class AbstractLogger
@@ -224,7 +224,7 @@ They are adding one more advantage, that we can also move *Log()* to Abstract cl
 
 Both problems of above approach are solved in this approach, this is how we implement **Template Method Design Pattern**. Any class inheriting AbstractLogger class just have to implement few methods, and they will already get some concrete methods like SerializeMessage() in this case. we can even provide optional implementation by using virtual keyword in concrete methods. 
 
-> Source Code : [Template-Method-Design-Pattern/Logger/Approach3](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach3)
+> Source Code : [Template Method Pattern / Logger / Approach3](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/CSharp/Approach3)
 
 ```csharp
 public abstract class AbstractLogger
@@ -315,7 +315,7 @@ Here all steps of our algo/program will be executed for sure, but I have some op
 
 Suppose in our example along with logging to data store, I optionaly want to let user choose whether to log in console also or not. To acieve this I have added on boolean property in base class *ConsoleLogging* and one virtual method *LogToConsole()*. In *Log()* I have added condition based on *ConsoleLogging* value whether to execute *LogToConsole()* or not(see code). Now if user want to log in console also he just need to pass *true* in *ConsoleLogging* property(see in Main() EmailLogger).
 
->Source Code : [Template-Method-Design-Pattern/Logger/Approach4](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach4)
+>Source Code : [Template Design Pattern / Logger / Approach4](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/CSharp/Approach4)
 
 ```csharp
 public abstract class AbstractLogger
@@ -413,6 +413,6 @@ class MainClass
 
 You can see in approach 4 code looks pretty better, whenever you see your code/algo is having same steps with minor configurable changes like the given example, Template method can be useful.
 
-> Complete Source Code : [Template Method Design Pattern/Logger](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger)
+> Complete Source Code : [Template Method Pattern / Logger](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/)
 
 > Thanks for reading, let the discussions/suggestions/queries go in comments.
