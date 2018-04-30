@@ -44,7 +44,7 @@ class MainClass {
 
 For each type of parser, seprate methods are created in JsonParser Class. Inside Parse(), according to Source of data passed appropriate method in called.
 
-> Source Code : [Strategy Pattern / JsonParser / Approach1](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach1)
+> Source Code : [Strategy Pattern / JsonParser / Approach1](/Strategy-Pattern/JsonParser/CSharp/Approach1)
 
 ```csharp
 class JsonParser {
@@ -94,7 +94,7 @@ Single class has multiple responsibilities, for adding a new parser, JsonParser 
 
 JsonParser class in made abstract with abstract Parse(), SensorDataParser and BlogDataParser are implementing Parse(). While consuming user can decide which Parser object to initialize.
 
-> Source Code : [Strategy Pattern / JsonParser / Approach2](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach2)
+> Source Code : [Strategy Pattern / JsonParser / Approach2](/Strategy-Pattern/JsonParser/CSharp/Approach2)
 
 ```csharp
 public abstract class JsonParser {
@@ -150,7 +150,7 @@ Parsing logic is tightly coupled with parser class and for each type we need to 
 
 Instead of making `JsonParser` class abstract we will have a proprty of type `IJsonParseLogic`, classes implementing this interface can be passed before calling Parse(). Here you can see `BlogDataParseLogic` & `SensorDataParseLogic` have implemented `IJsonParseLogic` and their object is set in `JsonParseLogic` in Main().
 
-> Source Code : [Strategy Pattern / JsonParser / Approach3](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach3)
+> Source Code : [Strategy Pattern / JsonParser / Approach3](/Strategy-Pattern/JsonParser/CSharp/Approach3)
 
 ```csharp
 class JsonParser {
@@ -205,6 +205,6 @@ class MainClass {
 
 As you can see in approach 3 algo/logic is decoupled, which makes code more maintainable. In scenarios like this Startegy pattern can be used.
 
-> Complete Source Code : [Strategy Pattern / JsonParser](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/)
+> Complete Source Code : [Strategy Pattern / JsonParser](/Strategy-Pattern/JsonParser/)
 
 > Thanks for reading, let the discussions/suggestions/queries go in comments.
