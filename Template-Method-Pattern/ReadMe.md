@@ -12,7 +12,7 @@ Let's understand this with an example. We will be implementing **Logger** which 
 
 We have 3 classes for each type of logger i.e. FileLogger, EmailLogger & DatabaseLogger. All have implemented their own logic.
 
-> Source Code : [Template Method Design Pattern/Logger/Approach1](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach1)
+> Source Code : [Template Method Design Pattern/Logger/Approach1](Logger/CSharp/Approach1)
 
 ```csharp
 public class FileLogger
