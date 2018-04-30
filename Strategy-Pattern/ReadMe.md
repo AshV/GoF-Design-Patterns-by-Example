@@ -1,5 +1,7 @@
 # Strategy Design Pattern by Example
 
+![Strategy-Design-Pattern-by-Example](assets/Strategy-Design-Pattern-by-Example.jpeg)
+
 To accomplish same type of task, different people might follow different strategies/approaches, one strategy could work best for one case whether another could prove best for other scenario.
 
  Let's take a real world example, In your office building your workstation is on first floor while your colleague has on 7th. Both of you are in hurry to reach their workstation(i.e same task), but if both of you take lift or take stairs(i.e follows same approach) will not be the best strategy. If you take stairs to reach 1st floor and your colleague takes lift to reach 7th floor(i.e different strategies) then this will be the best approach by both of you.
@@ -11,6 +13,8 @@ To accomplish same type of task, different people might follow different strateg
 JSON is most popular data exchange format today, suppose there is one system which needs to parse JSON data coming from various sources. This system was working fine, until dev team realized that though all data is in JSON format but there's variety of data like, weather sensor data which has mostly numeric value, blog articles which has large text blocks, chat conversations which has smaller text blocks with emozis. Dev team sees opportunity to optimize the performance of system using different parser according to source of data. Let's see how they addressed the problem and refactored towards maintainable code.
 
 Below is how our initial code looks like.
+
+> Source Code : [Strategy Pattern / JsonParser / Approach0](/Strategy-Pattern/JsonParser/CSharp/Approach0)
 
 ```csharp
 class JsonParser {
@@ -40,7 +44,7 @@ class MainClass {
 
 For each type of parser, seprate methods are created in JsonParser Class. Inside Parse(), according to Source of data passed appropriate method in called.
 
-> Source Code : [Strategy-Design-Pattern/JsonParser/Approach1](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/----/Approach1)
+> Source Code : [Strategy Pattern / JsonParser / Approach1](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach1)
 
 ```csharp
 class JsonParser {
@@ -89,6 +93,8 @@ Single class has multiple responsibilities, for adding a new parser, JsonParser 
 ### Approach 2 : Moving parsing logic to Child Classes
 
 JsonParser class in made abstract with abstract Parse(), SensorDataParser and BlogDataParser are implementing Parse(). While consuming user can decide which Parser object to initialize.
+
+> Source Code : [Strategy Pattern / JsonParser / Approach2](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach2)
 
 ```csharp
 public abstract class JsonParser {
@@ -144,6 +150,8 @@ Parsing logic is tightly coupled with parser class and for each type we need to 
 
 Instead of making `JsonParser` class abstract we will have a proprty of type `IJsonParseLogic`, classes implementing this interface can be passed before calling Parse(). Here you can see `BlogDataParseLogic` & `SensorDataParseLogic` have implemented `IJsonParseLogic` and their object is set in `JsonParseLogic` in Main().
 
+> Source Code : [Strategy Pattern / JsonParser / Approach3](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach3)
+
 ```csharp
 class JsonParser {
     public IJsonParseLogic JsonParseLogic { get; set; }
@@ -197,6 +205,6 @@ class MainClass {
 
 As you can see in approach 3 algo/logic is decoupled, which makes code more maintainable. In scenarios like this Startegy pattern can be used.
 
-> Complete Source Code : [Strategy Design Pattern/Logger](https://github.com/AshV/Design-Patterns/)
+> Complete Source Code : [Strategy Pattern / JsonParser](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/)
 
 > Thanks for reading, let the discussions/suggestions/queries go in comments.
