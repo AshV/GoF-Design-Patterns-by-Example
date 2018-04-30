@@ -40,9 +40,9 @@ class MainClass {
 
 > Example are written in C#, but easily understandable for anyone who knows basic OOPS concept.
 
-### Approach 1 : Seprate method for each parser 
+### Approach 1 : Separate method for each parser 
 
-For each type of parser, seprate methods are created in JsonParser Class. Inside Parse(), according to Source of data passed appropriate method in called.
+For each type of parser, separate methods are created in JsonParser Class. Inside Parse(), according to Source of data passed appropriate method in called.
 
 > Source Code : [Strategy Pattern / JsonParser / Approach1](/Strategy-Pattern/JsonParser/CSharp/Approach1)
 
