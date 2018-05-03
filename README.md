@@ -42,5 +42,5 @@ GoF Design Patterns are classified in 3 types, Creational, Structural and Behavi
 * Observer Pattern
 * Visitor Pattern
 * [Strategy Pattern](Strategy-Pattern/ReadMe.md)
-* [State Pattern](State-Pattern/ReadMe.md)
+* State Pattern
 * [Template Method Pattern](Template-Method-Pattern/ReadMe.md)
