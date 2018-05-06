@@ -203,7 +203,7 @@ class MainClass {
 
 ## Conclusion
 
-As you can see in approach 3 algo/logic is decoupled, which makes code more maintainable. In scenarios like this Startegy pattern can be used.
+As you can see in approach 3 algo/logic is decoupled, which makes code more maintainable. In scenarios like this Strategy Pattern can be used.
 
 > Complete Source Code : [Strategy Pattern / JsonParser](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/)
 
