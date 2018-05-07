@@ -11,7 +11,7 @@ According to approach or architecture you are using you may find different patte
 
 GoF Design Patterns are classified in 3 types, Creational, Structural and Behavioral.
 
-> This Work is in Progress, I'll be keep adding links to patterns as they are completed
+> This work is in Progress, I'll be keep adding links to patterns as they are completed
 
 ## Creational Design Patterns
 
@@ -44,3 +44,4 @@ GoF Design Patterns are classified in 3 types, Creational, Structural and Behavi
 * [Strategy Pattern](Strategy-Pattern/ReadMe.md)
 * State Pattern
 * [Template Method Pattern](Template-Method-Pattern/ReadMe.md)
+
