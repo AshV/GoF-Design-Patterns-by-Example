@@ -11,37 +11,36 @@ According to approach or architecture you are using you may find different patte
 
 GoF Design Patterns are classified in 3 types, Creational, Structural and Behavioral.
 
-> This work is in Progress, I'll be keep adding links to patterns as they are completed
+> This work is in Progress, State is mentioned whether *completed/work in progress/yet to start*. Feel free to explore completed ones.
+
+## Behavioral Design Patterns
+  
+* [Chain Of Responsibility Pattern](Chain-Of-Responsibility-Pattern) *-yet to start*
+* [Command Pattern](Command-Pattern) *-yet to start*
+* [Iterator Pattern](Iterator-Pattern) *-yet to start*
+* [Mediator Pattern](Mediator-Pattern) *-yet to start*
+* [Memento Pattern](Memento-Pattern) *-yet to start*
+* [Observer Pattern](Observer-Pattern) *-yet to start*
+* [Visitor Pattern](Visitor-Pattern) *-yet to start*
+* [Strategy Pattern](Strategy-Pattern) **- Completed**
+* [State Pattern](State-Pattern) *- work in progress*
+* [Template Method Pattern](Template-Method-Pattern) **- Completed**
 
 ## Creational Design Patterns
 
-* Simple Factory Pattern
-* Factory Method Pattern
-* Abstract Factory Pattern
-* Builder Pattern
-* Prototype Pattern
-* Singleton Pattern
+* [Simple Factory Pattern](Simple-Factory-Pattern) *-yet to start*
+* [Factory Method Pattern](Factory-Method-Pattern) *-yet to start*
+* [Abstract Factory Pattern](Abstract-Factory-Pattern) *-yet to start*
+* [Builder Pattern](Builder-Pattern) *-yet to start*
+* [Prototype Pattern](Prototype-Pattern) *-yet to start*
+* [Singleton Pattern](Singleton-Pattern) *-yet to start*
 
 ## Structural Design Patterns
 
-* Adapter Pattern
-* Bridge Pattern
-* Composite Pattern
-* Decorator Pattern
-* Facade Pattern
-* Flyweight Pattern
-* Proxy Pattern
-
-## Behavioral Design Patterns
-
-* Chain of Responsibility Pattern
-* Command Pattern
-* Iterator Pattern
-* Mediator Pattern
-* Memento Pattern
-* Observer Pattern
-* Visitor Pattern
-* [Strategy Pattern](Strategy-Pattern/ReadMe.md)
-* State Pattern
-* [Template Method Pattern](Template-Method-Pattern/ReadMe.md)
-
+* [Adapter Pattern](Adapter-Pattern) *-yet to start*
+* [Bridge Pattern](Bridge-Pattern) *-yet to start*
+* [Composite Pattern](Composite-Pattern) *-yet to start*
+* [Decorator Pattern](Decorator-Pattern) *-yet to start*
+* [Facade Pattern](Facade-Pattern) *-yet to start*
+* [Flyweight Pattern](Flyweight-Pattern) *-yet to start*
+* [Proxy Pattern](Proxy-Pattern) *-yet to start*
