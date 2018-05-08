@@ -4,21 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Approach2
-{
-    class CapeMario : IState
+  public  class CapeMario : IState
     {
-        public void GameOver()
+        private Mario mario;
+
+        public CapeMario(Mario mario)
         {
-            throw new NotImplementedException();
+            this.mario = mario;
         }
 
-        public void GotCoins(int numberOfCoins)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void GotFeather()
+        public void GotMushroom()
         {
             throw new NotImplementedException();
         }
@@ -28,12 +23,17 @@ namespace Approach2
             throw new NotImplementedException();
         }
 
-        public void GotLife()
+        public void GotFeather()
         {
             throw new NotImplementedException();
         }
 
-        public void GotMushroom()
+        public void GotCoins(int numberOfCoins)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public void GotLife()
         {
             throw new NotImplementedException();
         }
@@ -47,5 +47,9 @@ namespace Approach2
         {
             throw new NotImplementedException();
         }
+
+        public void GameOver()
+        {
+            throw new NotImplementedException();
+        }
     }
-}

@@ -1,51 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Approach2
+﻿public class SmallMario : IState
 {
-    class SmallMario : IState
+    private Mario mario;
+
+    public SmallMario(Mario mario)
     {
-        public void GameOver()
-        {
-            throw new NotImplementedException();
-        }
+        this.mario = mario;
+    }
 
-        public void GotCoins(int numberOfCoins)
-        {
-            throw new NotImplementedException();
-        }
+    public void GotMushroom()
+    {
+        mario.state = mario.GetState("superMario");
 
-        public void GotFeather()
-        {
-            throw new NotImplementedException();
-        }
+        GotCoins(100);
+    }
 
-        public void GotFireFlower()
-        {
-            throw new NotImplementedException();
-        }
+    public void GotFireFlower()
+    {
+        mario.state = mario.GetState("fireMario");
+    }
 
-        public void GotLife()
-        {
-            throw new NotImplementedException();
-        }
+    public void GotFeather()
+    {
+        mario.state = mario.GetState("capeMario");
+    }
 
-        public void GotMushroom()
-        {
-            throw new NotImplementedException();
-        }
+    public void GotCoins(int numberOfCoins)
+    {
+        mario.GotCoins(numberOfCoins);
+    }
 
-        public void LostLife()
-        {
-            throw new NotImplementedException();
-        }
+    public void GotLife()
+    {
+        mario.GotLife()
+    }
 
-        public void MetMonster()
-        {
-            throw new NotImplementedException();
-        }
+    public void LostLife()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void MetMonster()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void GameOver()
+    {
+        throw new NotImplementedException();
     }
 }
