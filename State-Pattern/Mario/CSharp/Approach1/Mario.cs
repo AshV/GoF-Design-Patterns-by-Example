@@ -29,13 +29,13 @@ public class Mario {
     public void GotFireFlower() {
         WriteLine("Got FireFlower!");
         State = internalState.FireMario;
-        GotCoins(100);
+        GotCoins(200);
     }
 
     public void GotFeather() {
         WriteLine("Got Feather!");
         State = internalState.CapeMario;
-        GotCoins(100);
+        GotCoins(300);
     }
 
     public void GotCoins(int numberOfCoins) {

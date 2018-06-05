@@ -6,7 +6,7 @@ In object oriented programming State Pattern is one of the way to implement *Fin
 
 When in our software, object can transit between multiple possible states, and changes it's behaviour accoring to state, Then this type of problems can be easily solved using *[Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine)*, and this pattern helps us to achive  this.
 
-Here I'm taking example of **Super Mario** game, most of the people must already aware of ths nostalgic game. In this mario changes, its states and behaviour based on events occurred, which you can see in below image which I got from [Mario Wiki](https://www.mariowiki.com/Super_Mario_World)
+Here I'm taking example of **Super Mario** game, most of the people must already aware of ths nostalgic game. In this mario changes, its states and behaviour based on events occurred, which you can see in below image which I got from [Mario Wiki](https://www.mariowiki.com/Super_Mario_World).
 
 ![Super Mario States](assets/mario-finite-state-machine.jpg)
 
@@ -25,6 +25,7 @@ Let's observe states/behaviour and events in above image.
 3. Got Feather 🍃
 4. Met Monster 👹 (Not shown in image, but you know Mario game. right?😉)
 
+#### State Transition on Event Occurrence
 Below table demonstrates how state changes on diferent events
 
 Current State | Event Occured | New State
@@ -39,6 +40,18 @@ Super Mario | Met Monster 👹 | Small Mario
 Fire Mario | Got Feather 🍃 | Cape Mario
 Fire Mario | Met Monster 👹 | Small Mario
 Cape Mario | Got Fire Flower 🔥 | Fire Mario
-Cape Mario | Got Fire Flower 🔥 | Small Mario
+Cape Mario | Met Monster 👹 | Small Mario
 
-Apart from state change, coins are also earned on occurrence of events
+#### Earning Coins
+Apart from state change, coins are also earned on occurrence of events.
+
+Event Occured | Coins Earned
+---|---
+Got Mushroom 🍄 | 100
+Got Fire Flower 🔥 | 200
+Got Feather 🍃 | 300
+Met Monster 👹 | 0
+
+#### Earning Life
+
+On each 5000 coins collected, one life will be awarded.

@@ -36,16 +36,16 @@
 
     public void LostLife()
     {
-        throw new NotImplementedException();
+      //  throw new NotImplementedException();
     }
 
     public void MetMonster()
     {
-        throw new NotImplementedException();
+       //  throw new NotImplementedException();
     }
 
     public void GameOver()
     {
-        throw new NotImplementedException();
+       //  throw new NotImplementedException();
     }
 }
