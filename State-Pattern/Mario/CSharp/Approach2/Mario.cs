@@ -41,6 +41,8 @@ public class Mario
         }
     }
 
+    // Events
+
     public void GotMushroom()
     {
         state.GotMushroom();
@@ -55,6 +57,13 @@ public class Mario
     {
         state.GotFeather();
     }
+
+    public void MetMonster()
+    {
+        state.MetMonster();
+    }
+
+    // Other Methods
 
     public void GotCoins(int numberOfCoins)
     {
@@ -72,11 +81,6 @@ public class Mario
         LifeCount -= 1;
         if (LifeCount <= 0)
             GameOver();
-    }
-
-    public void MetMonster()
-    {
-        state.MetMonster();
     }
 
     public void GameOver()
