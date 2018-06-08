@@ -1,4 +1,6 @@
-﻿public class SmallMario : IState
+﻿using static System.Console;
+
+public class SmallMario : IState
 {
     private Mario mario;
 
@@ -9,23 +11,29 @@
 
     public void GotMushroom()
     {
+        WriteLine("Got Mushroom!");
         mario.state = mario.GetState("superMario");
-
-       mario.GotCoins(100);
+        mario.GotCoins(100);
     }
 
     public void GotFireFlower()
     {
+        WriteLine("Got FireFlower!");
         mario.state = mario.GetState("fireMario");
+        mario.GotCoins(200);
     }
 
     public void GotFeather()
     {
+        WriteLine("Got Feather!");
         mario.state = mario.GetState("capeMario");
+        mario.GotCoins(300);
     }
 
     public void MetMonster()
     {
-        //  throw new NotImplementedException();
+        WriteLine("Met Monster!");
+        mario.state = mario.GetState("smallMario");
+        mario.LostLife();
     }
 }

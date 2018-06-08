@@ -46,7 +46,7 @@
     <Compile Include="FireMario.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="Mario.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmallMario.cs" />
     <Compile Include="SuperMario.cs" />

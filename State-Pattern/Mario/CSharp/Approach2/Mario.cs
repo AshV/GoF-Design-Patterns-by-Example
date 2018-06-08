@@ -67,11 +67,18 @@ public class Mario
 
     public void GotCoins(int numberOfCoins)
     {
+        WriteLine($"Got {numberOfCoins} Coin(s)!");
         CoinCount += numberOfCoins;
+        if (CoinCount >= 5000)
+        {
+            GotLife();
+            CoinCount -= 5000;
+        }
     }
 
     public void GotLife()
     {
+        WriteLine("Got Life!");
         LifeCount += 1;
     }
 
@@ -88,5 +95,10 @@ public class Mario
         LifeCount = 0;
         CoinCount = 0;
         WriteLine("Game Over!");
+    }
+
+    public override string ToString()
+    {
+        return $"State: {state} | LifeCount: {LifeCount} | CoinsCount: {CoinCount} \n";
     }
 }

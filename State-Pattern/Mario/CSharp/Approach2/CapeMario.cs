@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Console;
 
 public class CapeMario : IState
 {
@@ -13,23 +9,28 @@ public class CapeMario : IState
         this.mario = mario;
     }
 
-    public void GotFeather()
+    public void GotMushroom()
     {
-        throw new NotImplementedException();
+        WriteLine("Got Mushroom!");
+        mario.GotCoins(100);
     }
 
     public void GotFireFlower()
     {
-        throw new NotImplementedException();
+        WriteLine("Got FireFlower!");
+        mario.state = mario.GetState("fireMario");
+        mario.GotCoins(200);
     }
 
-    public void GotMushroom()
+    public void GotFeather()
     {
-        throw new NotImplementedException();
+        WriteLine("Got Feather!");
+        mario.GotCoins(300);
     }
 
     public void MetMonster()
     {
-        throw new NotImplementedException();
+        WriteLine("Met Monster!");
+        mario.state = mario.GetState("smallMario");
     }
 }

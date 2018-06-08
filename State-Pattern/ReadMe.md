@@ -27,36 +27,33 @@ Let's observe states/behaviour and events in above image.
 3. Got Feather 🍃
 4. Met Monster 👹 (Not shown in image, but you know Mario game. right?😉)
 
-#### State Transition on Event Occurrence
-Below table demonstrates how state changes on diferent events
+#### State Transition on Event Occurrence & Earning Coins
 
-Current State | Event Occured | New State
+Below table demonstrates how state changes on diferent events. Apart from state change, coins are also earned on occurrence of events.
+
+Current State | Event Occured | New State | Coins Earned
 ---|---|---
-Small Mario | Got Mushroom 🍄 | Super Mario
-Small Mario | Got Fire Flower 🔥 | Fire Mario
-Small Mario | Got Feather 🍃 | Cape Mario
-Small Mario | Met Monster 👹 | Lost Life
-Super Mario | Got Fire Flower 🔥 | Fire Mario
-Super Mario | Got Feather 🍃 | Cape Mario
-Super Mario | Met Monster 👹 | Small Mario
-Fire Mario | Got Feather 🍃 | Cape Mario
-Fire Mario | Met Monster 👹 | Small Mario
-Cape Mario | Got Fire Flower 🔥 | Fire Mario
-Cape Mario | Met Monster 👹 | Small Mario
-
-#### Earning Coins
-Apart from state change, coins are also earned on occurrence of events.
-
-Event Occured | Coins Earned
----|---
-Got Mushroom 🍄 | 100
-Got Fire Flower 🔥 | 200
-Got Feather 🍃 | 300
-Met Monster 👹 | 0
+Small Mario | Got Mushroom 🍄 | Super Mario | 100
+Small Mario | Got Fire Flower 🔥 | Fire Mario | 200
+Small Mario | Got Feather 🍃 | Cape Mario | 300
+Small Mario | Met Monster 👹 | Lost Life | 0
+Super Mario | Got Mushroom 🍄 | Super Mario | 100
+Super Mario | Got Fire Flower 🔥 | Fire Mario | 200
+Super Mario | Got Feather 🍃 | Cape Mario | 300
+Super Mario | Met Monster 👹 | Small Mario | 0
+Fire Mario | Got Mushroom 🍄 | Fire Mario | 100
+Fire Mario | Got Fire Flower 🔥 | Fire Mario | 200
+Fire Mario | Got Feather 🍃 | Cape Mario | 300
+Fire Mario | Met Monster 👹 | Small Mario | 0
+Cape Mario | Got Mushroom 🍄 | Cape Mario | 100
+Cape Mario | Got Fire Flower 🔥 | Fire Mario | 200
+Cape Mario | Got Feather 🍃 | Cape Mario | 300
+Cape Mario | Met Monster 👹 | Small Mario | 0
 
 #### Earning Life
 
 On each 5000 coins collected, one life will be awarded.
+
 
 ## Implementing in Code
 
