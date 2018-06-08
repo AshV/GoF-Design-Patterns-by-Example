@@ -59,7 +59,7 @@ On each 5000 coins collected, one life will be awarded.
 
 Just to make it clear Nintendo haven't open sourced Super Mario source code yet 😜, I am just taking example to help you understand State Design Pattern, like other articles in series we will start code with some code, and will be refactoring it gradually.
 
-### Approach 1
+### Approach 1: Creating Method for Every Events Occured
 
 We created enum(internalState) with name of all the states, for each event we have methods, where after validating conditions we are setting **State** property value which is of **internalState** type and represents the current state of object/Mario. refer below code
 
@@ -181,3 +181,7 @@ As you see in output it is changing state on occurence of different events.
 #### Reviewing Approach 1
 
 On occurence of each event, different operation can be executed based on current state of object. For example GotMushroom event, If it occurs for SmallMario it would be changed to SuperMario, but if same event occurs for SuperMario, it will remain the same. If may lead to confusion to write same conditions in each method.
+
+### Approach 2: Moving All State Related Code To Respective Class
+
+To address problem of approach 1, here I created separate class for each State, which all are inherited from **IState** interface.

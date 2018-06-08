@@ -1,9 +1,7 @@
 ﻿using static System.Console;
 
-class MainClass
-{
-    static void Main(string[] args)
-    {
+class MainClass {
+    static void Main(string[] args) {
         Mario mario = new Mario();
         WriteLine(mario);
 

@@ -1,7 +1,6 @@
 ﻿using static System.Console;
 
-public class Mario
-{
+public class Mario {
     public int LifeCount { get; private set; }
     public int CoinCount { get; private set; }
     public IState state;
@@ -11,8 +10,7 @@ public class Mario
     private FireMario fireMario;
     private CapeMario capeMario;
 
-    public Mario()
-    {
+    public Mario() {
         LifeCount = 1;
         CoinCount = 0;
 
@@ -24,10 +22,8 @@ public class Mario
         state = smallMario;
     }
 
-    public IState GetState(string stateId)
-    {
-        switch (stateId)
-        {
+    public IState GetState(string stateId) {
+        switch (stateId) {
             case "smallMario":
                 return smallMario;
             case "superMario":
@@ -40,65 +36,51 @@ public class Mario
                 return null;
         }
     }
-
-    // Events
-
-    public void GotMushroom()
-    {
+   
+    public void GotMushroom() {
         state.GotMushroom();
     }
 
-    public void GotFireFlower()
-    {
+    public void GotFireFlower() {
         state.GotFireFlower();
     }
 
-    public void GotFeather()
-    {
+    public void GotFeather() {
         state.GotFeather();
     }
 
-    public void MetMonster()
-    {
+    public void MetMonster() {
         state.MetMonster();
     }
-
-    // Other Methods
-
-    public void GotCoins(int numberOfCoins)
-    {
+    
+    public void GotCoins(int numberOfCoins) {
         WriteLine($"Got {numberOfCoins} Coin(s)!");
         CoinCount += numberOfCoins;
-        if (CoinCount >= 5000)
-        {
+        if (CoinCount >= 5000) {
             GotLife();
             CoinCount -= 5000;
         }
     }
 
-    public void GotLife()
-    {
+    public void GotLife() {
         WriteLine("Got Life!");
         LifeCount += 1;
     }
 
-    public void LostLife()
-    {
+    public void LostLife() {
         WriteLine("Lost Life!");
         LifeCount -= 1;
         if (LifeCount <= 0)
             GameOver();
     }
 
-    public void GameOver()
-    {
+    public void GameOver() {
         LifeCount = 0;
         CoinCount = 0;
         WriteLine("Game Over!");
     }
 
-    public override string ToString()
-    {
+    public override string ToString() {
         return $"State: {state} | LifeCount: {LifeCount} | CoinsCount: {CoinCount} \n";
     }
 }
