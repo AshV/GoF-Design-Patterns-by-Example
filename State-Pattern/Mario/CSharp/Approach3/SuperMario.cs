@@ -1,10 +1,13 @@
 ﻿using static System.Console;
 
 public class SuperMario : IState {
-    private Mario mario;
+    private static SuperMario instance = new SuperMario();
 
-    public SuperMario(Mario mario) {
-        this.mario = mario;
+    private SuperMario() { }
+
+    public static SuperMario GetInstance
+    {
+        get { return instance; }
     }
 
     public void GotMushroom(Mario mario) {
