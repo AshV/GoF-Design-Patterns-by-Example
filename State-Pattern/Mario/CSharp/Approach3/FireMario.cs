@@ -1,29 +1,37 @@
 ﻿using static System.Console;
 
-public class FireMario : IState {
-    private Mario mario;
+public class FireMario : IState
+{
+    private static FireMario instance = new FireMario();
 
-    public FireMario(Mario mario) {
-        this.mario = mario;
+    private FireMario() { }
+
+    public static FireMario GetInstance
+    {
+        get { return instance; }
     }
 
-    public void GotMushroom() {
+    public void GotMushroom(Mario mario)
+    {
         WriteLine("Got Mushroom!");
         mario.GotCoins(100);
     }
 
-    public void GotFireFlower() {
+    public void GotFireFlower(Mario mario)
+    {
         WriteLine("Got FireFlower!");
         mario.GotCoins(200);
     }
 
-    public void GotFeather() {
+    public void GotFeather(Mario mario)
+    {
         WriteLine("Got Feather!");
         mario.state = mario.GetState("capeMario");
         mario.GotCoins(300);
     }
 
-    public void MetMonster() {
+    public void MetMonster(Mario mario)
+    {
         WriteLine("Met Monster!");
         mario.state = mario.GetState("smallMario");
     }

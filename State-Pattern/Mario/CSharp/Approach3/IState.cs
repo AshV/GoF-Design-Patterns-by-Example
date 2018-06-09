@@ -1,6 +1,6 @@
 ﻿public interface IState {
-    void GotMushroom();
-    void GotFireFlower();
-    void GotFeather();
-    void MetMonster();
+    void GotMushroom(Mario mario);
+    void GotFireFlower(Mario mario);
+    void GotFeather(Mario mario);
+    void MetMonster(Mario mario);
 };
