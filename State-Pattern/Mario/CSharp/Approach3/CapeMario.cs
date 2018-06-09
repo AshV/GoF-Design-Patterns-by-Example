@@ -5,8 +5,7 @@ public class CapeMario : IState {
 
     private CapeMario() { }
 
-    public static CapeMario GetInstance
-    {
+    public static CapeMario GetInstance {
         get { return instance; }
     }
 

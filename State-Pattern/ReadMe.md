@@ -428,3 +428,243 @@ class MainClass {
     }
 }
 ```
+
+#### Reviewing Approach 2
+
+TBD
+
+### Approach 3: Making State Classes Singleton
+
+```csharp
+public interface IState {
+    void GotMushroom(Mario mario);
+    void GotFireFlower(Mario mario);
+    void GotFeather(Mario mario);
+    void MetMonster(Mario mario);
+};
+
+public class SmallMario : IState {
+    private static SmallMario instance = new SmallMario();
+
+    private SmallMario() { }
+
+    public static SmallMario GetInstance {
+        get { return instance; }
+    }
+
+    public void GotMushroom(Mario mario) {
+        WriteLine("Got Mushroom!");
+        mario.State = SuperMario.GetInstance;
+        mario.GotCoins(100);
+    }
+
+    public void GotFireFlower(Mario mario) {
+        WriteLine("Got FireFlower!");
+        mario.State = FireMario.GetInstance; 
+        mario.GotCoins(200);
+    }
+
+    public void GotFeather(Mario mario) {
+        WriteLine("Got Feather!");
+        mario.State = CapeMario.GetInstance;
+        mario.GotCoins(300);
+    }
+
+    public void MetMonster(Mario mario) {
+        WriteLine("Met Monster!");
+        mario.State = SmallMario.GetInstance;
+        mario.LostLife();
+    }
+}
+
+public class SuperMario : IState {
+    private static SuperMario instance = new SuperMario();
+
+    private SuperMario() { }
+
+    public static SuperMario GetInstance {
+        get { return instance; }
+    }
+
+    public void GotMushroom(Mario mario) {
+        WriteLine("Got Mushroom!");
+        mario.GotCoins(100);
+    }
+
+    public void GotFireFlower(Mario mario) {
+        WriteLine("Got FireFlower!");
+        mario.State = FireMario.GetInstance;
+        mario.GotCoins(200);
+    }
+
+    public void GotFeather(Mario mario) {
+        WriteLine("Got Feather!");
+        mario.State = CapeMario.GetInstance;
+        mario.GotCoins(300);
+    }
+
+    public void MetMonster(Mario mario) {
+        WriteLine("Met Monster!");
+        mario.State = SmallMario.GetInstance;
+    }
+}
+
+public class FireMario : IState {
+    private static FireMario instance = new FireMario();
+
+    private FireMario() { }
+
+    public static FireMario GetInstance {
+        get { return instance; }
+    }
+
+    public void GotMushroom(Mario mario) {
+        WriteLine("Got Mushroom!");
+        mario.GotCoins(100);
+    }
+
+    public void GotFireFlower(Mario mario) {
+        WriteLine("Got FireFlower!");
+        mario.GotCoins(200);
+    }
+
+    public void GotFeather(Mario mario) {
+        WriteLine("Got Feather!");
+        mario.State = CapeMario.GetInstance;
+        mario.GotCoins(300);
+    }
+
+    public void MetMonster(Mario mario) {
+        WriteLine("Met Monster!");
+        mario.State = SmallMario.GetInstance;
+    }
+}
+
+public class CapeMario : IState {
+    private static CapeMario instance = new CapeMario();
+
+    private CapeMario() { }
+
+    public static CapeMario GetInstance {
+        get { return instance; }
+    }
+
+    public void GotMushroom(Mario mario) {
+        WriteLine("Got Mushroom!");
+        mario.GotCoins(100);
+    }
+
+    public void GotFireFlower(Mario mario) {
+        WriteLine("Got FireFlower!");
+        mario.State = FireMario.GetInstance;
+        mario.GotCoins(200);
+    }
+
+    public void GotFeather(Mario mario) {
+        WriteLine("Got Feather!");
+        mario.GotCoins(300);
+    }
+
+    public void MetMonster(Mario mario) {
+        WriteLine("Met Monster!");
+        mario.State = SmallMario.GetInstance; 
+    }
+}
+
+public class Mario
+{
+    public int LifeCount { get; private set; }
+    public int CoinCount { get; private set; }
+    private IState state;
+
+    public IState State {
+        set { state = value; }
+    }
+
+    public Mario() {
+        LifeCount = 1;
+        CoinCount = 0;
+
+        state = SmallMario.GetInstance;
+    }
+
+    public void GotMushroom() {
+        state.GotMushroom(this);
+    }
+
+    public void GotFireFlower() {
+        state.GotFireFlower(this);
+    }
+
+    public void GotFeather() {
+        state.GotFeather(this);
+    }
+
+    public void MetMonster() {
+        state.MetMonster(this);
+    }
+
+    public void GotCoins(int numberOfCoins) {
+        WriteLine($"Got {numberOfCoins} Coin(s)!");
+        CoinCount += numberOfCoins;
+        if (CoinCount >= 5000) {
+            GotLife();
+            CoinCount -= 5000;
+        }
+    }
+
+    public void GotLife() {
+        WriteLine("Got Life!");
+        LifeCount += 1;
+    }
+
+    public void LostLife() {
+        WriteLine("Lost Life!");
+        LifeCount -= 1;
+        if (LifeCount <= 0)
+            GameOver();
+    }
+
+    public void GameOver() {
+        LifeCount = 0;
+        CoinCount = 0;
+        WriteLine("Game Over!");
+    }
+
+    public override string ToString() {
+        return $"State: {state} | LifeCount: {LifeCount} | CoinsCount: {CoinCount} \n";
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        Mario mario = new Mario();
+        WriteLine(mario);
+
+        mario.GotMushroom();
+        WriteLine(mario);
+
+        mario.GotFireFlower();
+        WriteLine(mario);
+
+        mario.GotFeather();
+        WriteLine(mario);
+
+        mario.GotCoins(4800);
+        WriteLine(mario);
+
+        mario.MetMonster();
+        WriteLine(mario);
+
+        mario.MetMonster();
+        WriteLine(mario);
+
+        mario.MetMonster();
+        WriteLine(mario);
+    }
+}
+```
+
+### Conclusion 
+
+TBD

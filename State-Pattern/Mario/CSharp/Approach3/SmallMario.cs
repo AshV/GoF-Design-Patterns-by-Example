@@ -5,8 +5,7 @@ public class SmallMario : IState {
 
     private SmallMario() { }
 
-    public static SmallMario GetInstance
-    {
+    public static SmallMario GetInstance {
         get { return instance; }
     }
 

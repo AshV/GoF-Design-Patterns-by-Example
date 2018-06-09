@@ -6,73 +6,61 @@ public class Mario
     public int CoinCount { get; private set; }
     private IState state;
 
-    public IState State
-    {
+    public IState State {
         set { state = value; }
     }
 
-    public Mario()
-    {
+    public Mario() {
         LifeCount = 1;
         CoinCount = 0;
 
         state = SmallMario.GetInstance;
     }
 
-    public void GotMushroom()
-    {
+    public void GotMushroom() {
         state.GotMushroom(this);
     }
 
-    public void GotFireFlower()
-    {
+    public void GotFireFlower() {
         state.GotFireFlower(this);
     }
 
-    public void GotFeather()
-    {
+    public void GotFeather() {
         state.GotFeather(this);
     }
 
-    public void MetMonster()
-    {
+    public void MetMonster() {
         state.MetMonster(this);
     }
 
-    public void GotCoins(int numberOfCoins)
-    {
+    public void GotCoins(int numberOfCoins) {
         WriteLine($"Got {numberOfCoins} Coin(s)!");
         CoinCount += numberOfCoins;
-        if (CoinCount >= 5000)
-        {
+        if (CoinCount >= 5000) {
             GotLife();
             CoinCount -= 5000;
         }
     }
 
-    public void GotLife()
-    {
+    public void GotLife() {
         WriteLine("Got Life!");
         LifeCount += 1;
     }
 
-    public void LostLife()
-    {
+    public void LostLife() {
         WriteLine("Lost Life!");
         LifeCount -= 1;
         if (LifeCount <= 0)
             GameOver();
     }
 
-    public void GameOver()
-    {
+    public void GameOver() {
         LifeCount = 0;
         CoinCount = 0;
         WriteLine("Game Over!");
     }
 
-    public override string ToString()
-    {
+    public override string ToString() {
         return $"State: {state} | LifeCount: {LifeCount} | CoinsCount: {CoinCount} \n";
     }
 }
