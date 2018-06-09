@@ -17,7 +17,7 @@ public class CapeMario : IState {
 
     public void GotFireFlower(Mario mario) {
         WriteLine("Got FireFlower!");
-        mario.state = mario.GetState("fireMario");
+        mario.State = FireMario.GetInstance;
         mario.GotCoins(200);
     }
 
@@ -28,6 +28,6 @@ public class CapeMario : IState {
 
     public void MetMonster(Mario mario) {
         WriteLine("Met Monster!");
-        mario.state = mario.GetState("smallMario");
+        mario.State = SmallMario.GetInstance; 
     }
 }

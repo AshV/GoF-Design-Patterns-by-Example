@@ -12,25 +12,25 @@ public class SmallMario : IState {
 
     public void GotMushroom(Mario mario) {
         WriteLine("Got Mushroom!");
-        mario.state = mario.GetState("superMario");
+        mario.State = SuperMario.GetInstance;
         mario.GotCoins(100);
     }
 
     public void GotFireFlower(Mario mario) {
         WriteLine("Got FireFlower!");
-        mario.state = mario.GetState("fireMario");
+        mario.State = FireMario.GetInstance; 
         mario.GotCoins(200);
     }
 
     public void GotFeather(Mario mario) {
         WriteLine("Got Feather!");
-        mario.state = mario.GetState("capeMario");
+        mario.State = CapeMario.GetInstance;
         mario.GotCoins(300);
     }
 
     public void MetMonster(Mario mario) {
         WriteLine("Met Monster!");
-        mario.state = mario.GetState("smallMario");
+        mario.State = SmallMario.GetInstance;
         mario.LostLife();
     }
 }
