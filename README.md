@@ -1,8 +1,8 @@
 # Gang of Four Design Patterns by Example
 
-In software engineering, Design Patterns are best practices/way to solve particular type of problems. They should occur naturally in your code  but if they are enforced, you will end up writing bloated/messy code, that's why you should be aware of patterns but before applying them, you shuold properly analyze the problem. Along with that you should also consider if language or tool you are using have already some better approach to solve the problem in standard library.
+In software engineering, Design Patterns are best practices/way to solve particular type of problems. They should occur naturally in your code  but if they are enforced, you will end up writing bloated/messy code, that's why you should be aware of patterns but before applying them, you should properly analyze the problem. Along with that you should also consider if language or tool you are using have already some better approach to solve the problem in standard library.
 
-According to approach or architecture you are using you may find different patterns like Design Patterns for Cloud, Microservices, UX, OOP or IoT. Here I'll be discussing about 23 Gang of Four Design Patterns, which applies to Object Oriented Programming. They were originated from a book called **Design Patterns: Elements of Reusable Object-Oriented Software**, which was published in **1994** by 4 awesome people(*Erich Gamma, Richard Helm, Ralph Jahnson, Josn Vlissides*) who are better known as **Gang of Four**.
+According to approach or architecture you are using you may find different patterns like Design Patterns for Cloud, Micro-services, UX, OOP or IoT. Here I'll be discussing about 23 Gang of Four Design Patterns, which applies to Object Oriented Programming. They were originated from a book called **Design Patterns: Elements of Reusable Object-Oriented Software**, which was published in **1994** by 4 awesome people(*Erich Gamma, Richard Helm, Ralph Jahnson, Josn Vlissides*) who are better known as **Gang of Four**.
 
 [![Gang_Of_Four](assets/Gang_Of_Four.gif)](https://www.flickr.com/photos/10591680@N07/1499817187)
 
@@ -23,7 +23,7 @@ GoF Design Patterns are classified in 3 types, Creational, Structural and Behavi
 * [Observer Pattern](Observer-Pattern) *-yet to start*
 * [Visitor Pattern](Visitor-Pattern) *-yet to start*
 * [Strategy Pattern](Strategy-Pattern) **- Completed**
-* [State Pattern](State-Pattern) *- work in progress*
+* [State Pattern](State-Pattern) **- Completed**
 * [Template Method Pattern](Template-Method-Pattern) **- Completed**
 
 ## Creational Design Patterns
