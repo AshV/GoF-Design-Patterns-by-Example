@@ -10,7 +10,7 @@ To accomplish same type of task, different people might follow different strateg
 
 ### Code Example: JSON Parser
 
-JSON is most popular data exchange format today, suppose there is one system which needs to parse JSON data coming from various sources. This system was working fine, until dev team realized that though all data is in JSON format but there's variety of data like, weather sensor data which has mostly numeric value, blog articles which has large text blocks, chat conversations which has smaller text blocks with emozis. Dev team sees opportunity to optimize the performance of system using different parser according to source of data. Let's see how they addressed the problem and refactored towards maintainable code.
+JSON is most popular data exchange format today, suppose there is one system which needs to parse JSON data coming from various sources. This system was working fine, until dev team realized that though all data is in JSON format but there's variety of data like, weather sensor data which has mostly numeric value, blog articles which has large text blocks, chat conversations which has smaller text blocks with emoji. Dev team sees opportunity to optimize the performance of system using different parser according to source of data. Let's see how they addressed the problem and refactored towards maintainable code.
 
 Below is how our initial code looks like.
 
@@ -148,7 +148,7 @@ Parsing logic is tightly coupled with parser class and for each type we need to 
 
 ### Approach 3 : Making more pluggable with interface
 
-Instead of making `JsonParser` class abstract we will have a proprty of type `IJsonParseLogic`, classes implementing this interface can be passed before calling Parse(). Here you can see `BlogDataParseLogic` & `SensorDataParseLogic` have implemented `IJsonParseLogic` and their object is set in `JsonParseLogic` in Main().
+Instead of making `JsonParser` class abstract we will have a property of type `IJsonParseLogic`, classes implementing this interface can be passed before calling Parse(). Here you can see `BlogDataParseLogic` & `SensorDataParseLogic` have implemented `IJsonParseLogic` and their object is set in `JsonParseLogic` in Main().
 
 > Source Code : [Strategy Pattern / JsonParser / Approach3](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Strategy-Pattern/JsonParser/CSharp/Approach3)
 

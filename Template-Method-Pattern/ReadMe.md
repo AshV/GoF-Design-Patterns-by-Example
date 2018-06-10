@@ -4,7 +4,7 @@
 
 This pattern falls under behavioral design patterns, as name suggests it defines template which can be used further to create something by using it. You can think it like **stencils**, you can create designs on wall or other surface without much effort, you just need to choose color and apply pigment.
 
-Let's understand this with an example. We will be implementing **Logger** which is capable of logging in multiple places like, database, file or sending logs in email. We will start with one simple solution and will refactor it gradually to see how template method pattern can be usefull for us.
+Let's understand this with an example. We will be implementing **Logger** which is capable of logging in multiple places like, database, file or sending logs in email. We will start with one simple solution and will refactor it gradually to see how template method pattern can be useful for us.
 
 > Example are written in C#, but easily understandable for anyone who knows basic OOPS concept. 
 
@@ -220,7 +220,7 @@ Log() is doing nothing fancy, just calling all other method in sequence, isn't i
 
 We have added abstract methods in abstract class with generalized name i.e *OpenDataStoreOperation()*, *LogMessage()* & *CloseDataStoreOpreation()* which are representing 3 operations mentioned above in Approach 2 problems. So all the loggers have to implement them.
 
-They are adding one more advantage, that we can also move *Log()* to Abstract class, becuase all the methods which are being called in sequence in child classes are available in parent one.
+They are adding one more advantage, that we can also move *Log()* to Abstract class, because all the methods which are being called in sequence in child classes are available in parent one.
 
 Both problems of above approach are solved in this approach, this is how we implement **Template Method Design Pattern**. Any class inheriting AbstractLogger class just have to implement few methods, and they will already get some concrete methods like SerializeMessage() in this case. we can even provide optional implementation by using virtual keyword in concrete methods. 
 
@@ -313,7 +313,7 @@ Here all steps of our algo/program will be executed for sure, but I have some op
 
 ### Approach 4 : Let the Caller decide some of the things
 
-Suppose in our example along with logging to data store, I optionaly want to let user choose whether to log in console also or not. To acieve this I have added on boolean property in base class *ConsoleLogging* and one virtual method *LogToConsole()*. In *Log()* I have added condition based on *ConsoleLogging* value whether to execute *LogToConsole()* or not(see code). Now if user want to log in console also he just need to pass *true* in *ConsoleLogging* property(see in Main() EmailLogger).
+Suppose in our example along with logging to data store, I optionally want to let user choose whether to log in console also or not. To achieve this I have added on boolean property in base class *ConsoleLogging* and one virtual method *LogToConsole()*. In *Log()* I have added condition based on *ConsoleLogging* value whether to execute *LogToConsole()* or not(see code). Now if user want to log in console also he just need to pass *true* in *ConsoleLogging* property(see in Main() EmailLogger).
 
 >Source Code : [Template Design Pattern / Logger / Approach4](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/Template-Method-Pattern/Logger/CSharp/Approach4)
 
