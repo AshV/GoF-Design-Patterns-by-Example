@@ -1,4 +1,4 @@
-﻿# State Design Pattern by Example
+﻿# State Design Pattern by Mario Example
 
 ![State Design Pattern - Game Character States](assets/header.png)
 
@@ -58,6 +58,8 @@ On each 5000 coins collected, one life will be awarded.
 ## Implementing in Code
 
 Just to make it clear Nintendo haven't open sourced Super Mario source code yet 😜, I am just taking example to help you understand State Design Pattern, like other articles in series we will start code with some code, and will be refactoring it gradually.
+
+> [Find Source Code in GitHub / State Patern / Mario](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/State-Pattern/Mario/)
 
 ### Approach 1: Creating Method for Every Events Occured
 
