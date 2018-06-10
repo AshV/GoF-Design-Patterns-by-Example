@@ -4,7 +4,7 @@
 
 In object oriented programming State Pattern is one of the way to implement *Finite State Machines*. This pattern falls under *Behavioral Design Patterns*.
 
-When in our software, object can transit between multiple possible states, and changes it's behaviour accoring to state, Then this type of problems can be easily solved using *[Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine)*, and this pattern helps us to achive  this.
+When in our software, object can transit between multiple possible states, and changes it's behaviour according to state, Then this type of problems can be easily solved using *[Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine)*, and this pattern helps us to achieve  this.
 
 ## Glance of Mario's State/Behaviours in Game
 
@@ -29,9 +29,9 @@ Let's observe states/behaviour and events in above image.
 
 #### State Transition on Event Occurrence & Earning Coins
 
-Below table demonstrates how state changes on diferent events. Apart from state change, coins are also earned on occurrence of events.
+Below table demonstrates how state changes on different events. Apart from state change, coins are also earned on occurrence of events.
 
-Current State | Event Occured | New State | Coins Earned
+Current State | Event Occurred | New State | Coins Earned
 ---|---|---
 Small Mario | Got Mushroom 🍄 | Super Mario | 100
 Small Mario | Got Fire Flower 🔥 | Fire Mario | 200
@@ -174,13 +174,13 @@ class MainClass {
 }
 ```
 
-As you see in output it is changing state on occurence of different events.
+As you see in output it is changing state on occurrence of different events.
 
 ![Approach1_Output](assets/Approach1_Output.png) 
 
 #### Reviewing Approach 1
 
-On occurence of each event, different operation can be executed based on current state of object. For example GotMushroom event, If it occurs for SmallMario it would be changed to SuperMario, but if same event occurs for SuperMario, it will remain the same. If may lead to confusion to write same conditions in each method.
+On occurrence of each event, different operation can be executed based on current state of object. For example GotMushroom event, If it occurs for SmallMario it would be changed to SuperMario, but if same event occurs for SuperMario, it will remain the same. If may lead to confusion to write same conditions in each method.
 
 ### Approach 2: Moving All State Related Code To Respective Class
 
@@ -431,9 +431,11 @@ class MainClass {
 
 #### Reviewing Approach 2
 
-TBD
+Everything related to states is within state classes now, but responsibility to create it's object is still outside.
 
 ### Approach 3: Making State Classes Singleton
+
+Since our state classes having no variable/properties, all those are maintained in Mario class, so we can make state classes singleton. In event methods of all singleton classes we will be passing current Mario object so states can be switched. Here IState interface is changed accordingly to pass Mario class object as parameter & Inside Mario class no need to initialize all the objects.
 
 ```csharp
 public interface IState {
@@ -667,4 +669,7 @@ class MainClass {
 
 ### Conclusion 
 
-TBD
+All state related logic is maintained within state classes now, and in final approach singleton is used, which can be implemented in various better ways.
+Here we have removed conditional duplicacy & new states can be easily added. Existing states logic can be easily extended without changing any other class. In game programming this pattern is frequently used.
+
+Thanks for reading, let the suggestions/discussions/queries go in comments.
