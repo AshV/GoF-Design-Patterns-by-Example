@@ -32,7 +32,7 @@ Let's observe states/behaviour and events in above image.
 Below table demonstrates how state changes on different events. Apart from state change, coins are also earned on occurrence of events.
 
 Current State | Event Occurred | New State | Coins Earned
----|---|---
+---|---|---|---
 Small Mario | Got Mushroom 🍄 | Super Mario | 100
 Small Mario | Got Fire Flower 🔥 | Fire Mario | 200
 Small Mario | Got Feather 🍃 | Cape Mario | 300
