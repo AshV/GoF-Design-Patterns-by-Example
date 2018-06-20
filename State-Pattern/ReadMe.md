@@ -4,7 +4,7 @@
 
 In object oriented programming State Pattern is one of the way to implement *Finite State Machines*. This pattern falls under *Behavioral Design Patterns*.
 
-When in our software, object can transit between multiple possible states, and changes it's behaviour according to state, Then this type of problems can be easily solved using *[Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine)*, and this pattern helps us to achieve  this.
+When in our software, object transition happens between multiple possible states, and changes its behaviour according to state, Then these type of problems can be easily solved using *[Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine)*, and this pattern helps us to achieve  this.
 
 ## Glance of Mario's State/Behaviours in Game
 
@@ -59,7 +59,7 @@ On each 5000 coins collected, one life will be awarded.
 
 Just to make it clear Nintendo haven't open sourced Super Mario source code yet 😜, I am just taking example to help you understand State Design Pattern, like other articles in series we will start code with some code, and will be refactoring it gradually.
 
-> [Find Source Code in GitHub / State Patern / Mario](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/State-Pattern/Mario/)
+> [Find Source Code in GitHub / State Pattern / Mario](https://github.com/AshV/GoF-Design-Patterns-by-Example/tree/master/State-Pattern/Mario/)
 
 ### Approach 1: Creating Method for Every Events Occured
 
@@ -187,7 +187,7 @@ On occurrence of each event, different operation can be executed based on curren
 ### Approach 2: Moving All State Related Code To Respective Class
 
 To address problem of approach 1, here I created separate class for each State, which all are inherited from **IState** interface. This interface contains respective methods for all our four events i.e GotMushroom(), GotFireFlower(), GotFeather() & MetMonster().
-All State classes are inheriting this, Now before writing state specific code we don't need to check condition, because it's being written for specific states. All 4 state classes are mimicking our State transition table shown above. refer code.
+All State classes are inheriting this, Now before writing state specific code we don't need to check condition, because it is being written for specific states. All 4 state classes are mimicking our State transition table shown above. refer code.
 
 ```csharp
 public interface IState {
@@ -433,7 +433,7 @@ class MainClass {
 
 #### Reviewing Approach 2
 
-Everything related to states is within state classes now, but responsibility to create it's object is still outside.
+Everything related to states is within state classes now, but responsibility to create its object is still outside.
 
 ### Approach 3: Making State Classes Singleton
 
